@@ -10,11 +10,11 @@
 	<img th:src="@{/images/logo.png}" alt="Room-Service" style="margin-left: 615px; width: 375px; height: 125px">
 
 	<h1>Please Insert Your Opportunity</h1>
-    <form action="#" th:action="@{/addOpoortunity}" th:object="${opportunityForm}" method="post">
+    <form action="#" th:action="@{/addOportunity}" th:object="${opportunityForm}" method="post">
     	
     	<h3>Opportunity Details:</h3>
     	
-    	<p>opportunityId: <input type="text" th:field="*{opportunityId}" /></p>
+    	<p>opportunityId: <input type="text" th:field="*{opportunityId}" readonly/></p>
         <p>entityType: <input type="text" th:field="*{entityType}" /></p>
 		<p>entityId: <input type="text" th:field="*{entityId}" /></p>
 		

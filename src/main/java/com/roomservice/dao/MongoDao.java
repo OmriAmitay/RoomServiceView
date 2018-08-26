@@ -104,4 +104,18 @@ public class MongoDao {
 
 	}
 
+	public long getMaxOpportunityId() {
+		Document doc = opportunityCollection.find().sort( new Document( "opportunity_id" , -1 ) )
+			.limit(1).projection(new Document( "opportunity_id" , 1 ))
+			.first();
+		
+		Long id = doc.getLong("opportunity_id");
+		if(id == null) {
+			return 1;
+		}
+				
+		return id + 1;
+					
+	}
+
 }
