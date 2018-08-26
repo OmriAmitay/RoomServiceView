@@ -1,27 +1,54 @@
 package com.roomservice.entity;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
 public class OpportunityFormData {
 
+	@NotNull
 	private Long opportunityId;
+	@NotNull
 	private String entityType;
+	@NotNull
 	private Integer entityId;
+	@NotNull
 	private String arrival;
+	@NotNull
 	private String departure;
+	@NotNull
 	private Integer numOfNights = 1;
+	@NotNull
 	private String board;
+	@NotNull
 	private Double price;
+	@NotNull
 	private Operator operator = Operator.LTE;
+	@NotNull
 	private Currency currency = Currency.USD;
+	@NotNull
 	private Filter filter = Filter.FREE_CANCELATION;
+	@NotNull
 	private Boolean payAtTheHotel = false;
+	@NotNull
 	private Boolean onRequest = false;
+	@NotNull
 	private Boolean showSpecialDeals = false;
+	@NotNull
 	private Boolean getPackageRates = false;
+	@NotNull
 	private String countryCode;
+	@NotNull
+	@Min(2)
+	@Max(4)
 	private Integer adultsCount = 2;
+	@NotNull
 	private String defaultCurrency = Currency.USD.name();
+	@NotNull
 	private Boolean active = true;
+	@NotNull
 	private Boolean push;
+	@NotNull
     private PushInfo pushInfo;
 	public Long getOpportunityId() {
 		return opportunityId;

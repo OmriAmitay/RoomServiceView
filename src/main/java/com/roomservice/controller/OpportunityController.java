@@ -1,6 +1,7 @@
 package com.roomservice.controller;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +24,7 @@ public class OpportunityController {
     }
 
     @PostMapping("/addOpoortunity")
-    public String greetingSubmit(@ModelAttribute OpportunityFormData opportunityFormData, 
+    public String greetingSubmit(@Valid @ModelAttribute OpportunityFormData opportunityFormData, 
     	HttpServletResponse response) {
     	
     	boolean isValid = MongoDao.getInstance().importOpportunity(opportunityFormData);
